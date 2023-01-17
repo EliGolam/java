@@ -7,9 +7,17 @@ class UserInput {
 
     System.out.print("What's your name? ");
     String name = scanner.nextLine();
-    scanner.close();
 
-    System.out.printf("My name is: %s", name);
+    System.out.printf("My name is: %s\n", name);
 
+    System.out.print("Are you ready? ");
+    String ready = scanner.nextLine();
+    
+    if (ready.equalsIgnoreCase("yes")) {
+      System.out.println("Nice! Let's start");
+    }
+    else {
+      System.out.println("What a shame. Maybe next time. Bye!");
+    }
   }  
 }
