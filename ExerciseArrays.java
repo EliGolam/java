@@ -14,5 +14,11 @@ public class ExerciseArrays {
 
     int nums[] = {1, 2, 3, 4, 5}; 
     System.out.println(Arrays.toString(nums));
+
+    int randomValues[] = new int[5];
+    Arrays.fill(randomValues, 0);
+
+    System.out.println(Arrays.toString(randomValues));
+    System.out.printf("The sum of the array nums is %d", Arrays.stream(nums).sum());
   }
 }
