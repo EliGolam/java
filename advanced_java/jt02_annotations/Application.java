@@ -1,7 +1,9 @@
 package jt02_annotations;
 
+import java.lang.reflect.Method;
+
 public class Application {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
     /*
      * ANNOTATIONS
      * Metadata to the java compiler about the program that is not part of the program itself
@@ -13,6 +15,15 @@ public class Application {
      * It can save some compiler processing time
      */
 
-    
+    Application app = new Application();
+    Method methodVal = app.getClass().getMethod("testAnnotation"); 
+
+    MyCustomAnnotation myCustomAnnotation = methodVal.getAnnotation(MyCustomAnnotation.class);
+    System.out.printf("Annotation value is %d", myCustomAnnotation.value());
+  }
+
+  @MyCustomAnnotation(value = 13)
+  public void testAnnotation() {
+    System.out.println("My Custom Annotation Test");
   }
 }
